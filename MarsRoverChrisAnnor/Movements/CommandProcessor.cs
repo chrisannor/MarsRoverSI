@@ -24,10 +24,11 @@
                 try
                 {
                     MoveRobot(step);
+                    Console.WriteLine($"Current Position: {_rover.CurrentPosition.Coordinates.X},{_rover.CurrentPosition.Coordinates.X} Facing: {_rover.CurrentPosition.Direction}");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    Console.WriteLine($"Navigation Error: {e.Message}");
                 }
             }
 
@@ -38,8 +39,7 @@
 
         private void MoveRobot(char stepCommand)
         {
-            int forwardMoves;
-            if (int.TryParse(stepCommand.ToString(), out forwardMoves))
+            if (int.TryParse(stepCommand.ToString(), out var forwardMoves))
             {
                 var newCoordinates = MoveForward.Move(forwardMoves, _rover.CurrentPosition);
 
