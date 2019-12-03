@@ -24,7 +24,7 @@
                 try
                 {
                     MoveRobot(step);
-                    Console.WriteLine($"Current Position: {_rover.CurrentPosition.Coordinates.X},{_rover.CurrentPosition.Coordinates.X} Facing: {_rover.CurrentPosition.Direction}");
+
                 }
                 catch (Exception e)
                 {

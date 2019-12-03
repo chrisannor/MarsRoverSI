@@ -1,5 +1,7 @@
 ﻿namespace MarsRoverChrisAnnor
 {
+    using System;
+
     public class Rover
     {
         public RoverPosition CurrentPosition;
@@ -22,6 +24,12 @@
         public void UpdateCurrentCoordinates(Coordinates newCoordinates)
         {
             CurrentPosition.Coordinates = newCoordinates;
+            Console.WriteLine(GetCurrentLocation());
+        }
+
+        public string GetCurrentLocation()
+        {
+            return $"{CurrentPosition.Coordinates.X},{CurrentPosition.Coordinates.Y} Facing: {CurrentPosition.Direction}";
         }
     }
 }
